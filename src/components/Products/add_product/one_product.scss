@@ -1,0 +1,30 @@
+.OneProduct__wrapper{
+    opacity: 1;
+    display: flex;
+    margin: 5px;
+    &:hover {
+        opacity: 1;
+    } 
+    .OneProduct__image{
+        height: 200px;
+        width: 200px;
+        border: dotted rgb(74, 231, 69);
+    }
+    .OneProduct__image img {
+        height: 200px;
+        width: 200px;
+    }
+    .OneProduct__info{
+        background-color: rgb(177, 106, 79);
+        display: flex;
+        flex-direction:column;
+        justify-content: space-between;
+        flex-grow: 1;
+        height: 200px;
+        border: dotted rgb(74, 231, 69);
+        .OneProduct__CountDel{
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+}

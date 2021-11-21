@@ -1,0 +1,11 @@
+export const INCREMENT = "INCREMENT"
+export const NAME = "NAME"
+export const DESCRIPTION = "DESCRIPTION"
+export const COLOR = "COLOR"
+export const WEIGHT = "WEIGHT"
+export const LENGTH = "LENGTH"
+export const HEIGHT = "HEIGHT"
+export const WIDTH = "WIDTH"
+export const COUNT = "COUNT"
+export const PHOTO = "PHOTO"
+export const ADD_PRODUCT = 'ADD_PRODUCT'

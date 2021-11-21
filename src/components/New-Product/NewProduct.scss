@@ -1,0 +1,41 @@
+.new-product{
+    width: 1200px;
+    height: 100%;
+    margin: 0 0;
+    display: grid;
+
+  
+    grid-template-areas:
+    "b i c"
+    "b d c";
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 2fr 10fr 6fr;
+    grid-gap: 15px;
+    background-color: #d8cbb3;
+
+    .new-product__back{
+        grid-area: b;
+    }
+    .new-product__image{
+        grid-area: i;
+        height: 400px;
+        width: 670px;
+        border: dotted black;
+        background-color: rgb(168, 191, 211);
+    }
+    .new-product__description{
+        grid-area: d;
+        border: dotted black;
+        background-color: rgb(146, 224, 226);
+    }
+    .new-product__comments{
+        grid-area: c;
+        border: dotted black;
+        background-color: rgb(236, 182, 234);
+        .comments-list{
+            background-color: #fff;
+            height: 300px;
+            width: 350px;
+        }
+    }
+}
