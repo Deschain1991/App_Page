@@ -6,9 +6,7 @@ import "./NewProduct.scss";
 const NewProduct = (props) => {
 
     const router = useParams()
-
-    console.log(router)
-
+    
     return (
 
         <div className='new-product'>

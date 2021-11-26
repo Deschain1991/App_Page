@@ -1,5 +1,5 @@
 import { COLOR, COUNT,ADD_PRODUCT, DESCRIPTION, HEIGHT, INCREMENT, LENGTH, NAME, PHOTO, WEIGHT, WIDTH,  } from '../actions/action-types';
-
+import { v4 as uuidv4 } from 'uuid';
 
 const initialState = {
     items: [
@@ -48,7 +48,7 @@ const productReducer = (state = initialState, action) => {
         
         case ADD_PRODUCT:{
             let newProduct ={
-                id: '',
+                id: uuidv4(),
                 name: state.newName,
                 description: state.newDescription,
                 color: state.newColor,

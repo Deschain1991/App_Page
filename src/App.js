@@ -17,7 +17,7 @@ const App = (props) => {
           component={Products}
         />
         <Route
-          exact path='/NewProduct/:id'
+          exact path='/details/:id'
           component={NewProduct} />
         <Route
           exact path='/Modal'
