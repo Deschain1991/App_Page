@@ -8,7 +8,8 @@ import { INCREMENT,
          WIDTH,
          COUNT,
          ADD_PRODUCT,
-         PHOTO} from './action-types'
+         PHOTO,
+         DEL_PRODUCT} from './action-types'
 
 export const increment = () => {
     return {
@@ -26,6 +27,7 @@ export const addSomethingAsync = () => {
 }
 
 export const addProductAction = () => ({type: ADD_PRODUCT});
+export const delProductAction = (id) => ({type: DEL_PRODUCT, paylosd: id});
 export const updateName = (text) => ({type: NAME, payload: text});
 export const updateDescription = (text) => ({type: DESCRIPTION, payload: text});
 export const updateColor = (text) => ({type: COLOR, payload: text});

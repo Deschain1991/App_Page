@@ -9,7 +9,7 @@ import { useSelector } from "react-redux";
 
 
 
-const Products = () => {
+const Products = (props) => {
 
     const dispatch = useDispatch()
 

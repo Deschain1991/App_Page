@@ -1,4 +1,4 @@
-import { COLOR, COUNT,ADD_PRODUCT, DESCRIPTION, HEIGHT, INCREMENT, LENGTH, NAME, PHOTO, WEIGHT, WIDTH,  } from '../actions/action-types';
+import { COLOR, COUNT,ADD_PRODUCT, DESCRIPTION, HEIGHT, INCREMENT, LENGTH, NAME, PHOTO, WEIGHT, WIDTH, DEL_PRODUCT,  } from '../actions/action-types';
 import { v4 as uuidv4 } from 'uuid';
 
 const initialState = {
@@ -74,6 +74,11 @@ const productReducer = (state = initialState, action) => {
                     ...state.items, newProduct
                 ]
             }
+        }
+        case DEL_PRODUCT: {
+            let otherProducts ={}
+            return{otherProducts}
+
         }
          
         case NAME: {
