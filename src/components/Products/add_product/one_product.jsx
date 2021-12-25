@@ -1,6 +1,8 @@
 import React from "react";
 import './one_product.scss';
 import { NavLink, useHistory } from "react-router-dom";
+import { delProductAction } from "../../../actions/all-products.actions";
+import { connect } from "react-redux";
 
 
 
@@ -20,12 +22,19 @@ const OneProduct = (props) => {
                 </div>
                 <div className='OneProduct__CountDel'>
                     <div>{props.count}</div>
-                    <button onClick ={e => e.stopPropagation()}>Delete</button>
+                    <button onClick ={e => {
+                        e.stopPropagation()
+                        props.deleteProduct(props.id)
+                    }}>Delete</button>
                 </div>
             </div>
         </div>
     )
 }
 
+const mapDispatchToProps = {
+    deleteProduct: delProductAction
+   
+}
 
-export default OneProduct;
+export default connect(null, mapDispatchToProps)(OneProduct);

@@ -27,7 +27,7 @@ export const addSomethingAsync = () => {
 }
 
 export const addProductAction = () => ({type: ADD_PRODUCT});
-export const delProductAction = (id) => ({type: DEL_PRODUCT, paylosd: id});
+export const delProductAction = (id) => ({type: DEL_PRODUCT, payload: id});
 export const updateName = (text) => ({type: NAME, payload: text});
 export const updateDescription = (text) => ({type: DESCRIPTION, payload: text});
 export const updateColor = (text) => ({type: COLOR, payload: text});

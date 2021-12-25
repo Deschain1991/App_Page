@@ -76,9 +76,13 @@ const productReducer = (state = initialState, action) => {
             }
         }
         case DEL_PRODUCT: {
-            let otherProducts ={}
-            return{otherProducts}
-
+            return {
+                ...state,
+                items : [
+                    ...state.items.filter(item => item.id !== action.payload)
+                ]
+            }
+            
         }
          
         case NAME: {
