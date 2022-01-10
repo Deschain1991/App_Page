@@ -76,3 +76,31 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 git add .
 git commit -m "First commit"
 git push origin master
+
+
+
+  // const filterKeyword = useSelector((state) => state.products.modal)
+    const sortMethod = {
+        aToZ: false,
+        zToA: false,
+        priceLessToMore: false,
+        priceMoreToLess: false
+    }
+
+    const sortedProducts = products.sort((a, b) => {
+        if (sortMethod.aToZ) {
+            return a.name < b.name ? 1 : a.name > b.name ? -1 : 0
+        } else if (sortMethod.zToA) {
+            return a.name < b.name ? -1 : a.name > b.name ? 1 : 0
+        } else if (sortMethod.priceLessToMore) {
+            return a.price < b.price ? 1 : a.price > b.price ? -1 : 0
+        } else if (sortMethod.priceMoreToLess) {
+            return a.price < b.price ? -1 : a.price > b.price ? 1 : 0
+        }
+    }).filter((item) => {
+        if (!filterKeyword) {
+            return true
+        } else {
+            return item.name.contains(filterKeyword)
+        }
+    })

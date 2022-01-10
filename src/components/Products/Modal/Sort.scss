@@ -20,7 +20,15 @@
         width: 50vw;
         transform: scale(0.5);
         transition: 0.4s all;
-          
+        .modal-style{
+            
+            .txt {
+                border: solid rgb(86, 143, 216);
+                width: 100%;
+                margin: 5px 0;
+    }
+
+        }   
 
     }
 }
@@ -36,3 +44,6 @@
 
 
 
+.buttons {
+    display: block;
+}

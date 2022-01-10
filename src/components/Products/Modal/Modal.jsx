@@ -66,7 +66,7 @@ const Modal = (props) => {
                         value ={props.newPhoto}/>
                     </div>
                     <button>Cancel</button>
-                    <button on onClick = {()=> submitAction()}>Add product</button>
+                    <button onClick = {()=> submitAction()}>Add product</button>
                 </div>
           </div>
       </div>
