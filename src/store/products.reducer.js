@@ -1,7 +1,7 @@
-import { COLOR, COUNT,ADD_PRODUCT, DESCRIPTION, HEIGHT, INCREMENT, LENGTH, NAME, PHOTO, WEIGHT, WIDTH, DEL_PRODUCT,  } from '../actions/action-types';
+import { COLOR, COUNT, ADD_PRODUCT, DESCRIPTION, HEIGHT, INCREMENT, LENGTH, NAME, PHOTO, WEIGHT, WIDTH, DEL_PRODUCT, } from '../actions/action-types';
 import { v4 as uuidv4 } from 'uuid';
 
-const initialState = {
+export const initialState = {
     items: [
         // {
         //     id: 1, name: 'крякозябра', count: 1, description: 'шотатамб якетотам',
@@ -19,7 +19,7 @@ const initialState = {
     newColor: '',
     newWeight: '',
     newLength: '',
-    newHeight:'',
+    newHeight: '',
     newWidth: '',
     newCount: '',
     newPhoto: '',
@@ -45,9 +45,9 @@ const initialState = {
 
 const productReducer = (state = initialState, action) => {
     switch (action.type) {
-        
-        case ADD_PRODUCT:{
-            let newProduct ={
+
+        case ADD_PRODUCT: {
+            let newProduct = {
                 id: uuidv4(),
                 name: state.newName,
                 description: state.newDescription,
@@ -59,14 +59,14 @@ const productReducer = (state = initialState, action) => {
                 count: state.newCount,
                 photo: state.newPhoto,
 
-            }            
+            }
             return {
                 newName: '',
                 newDescription: '',
                 newColor: '',
                 newWeight: '',
                 newLength: '',
-                newHeight:'',
+                newHeight: '',
                 newWidth: '',
                 newCount: '',
                 newPhoto: '',
@@ -78,13 +78,13 @@ const productReducer = (state = initialState, action) => {
         case DEL_PRODUCT: {
             return {
                 ...state,
-                items : [
+                items: [
                     ...state.items.filter(item => item.id !== action.payload)
                 ]
             }
-            
+
         }
-         
+
         case NAME: {
             return {
                 ...state,
@@ -139,9 +139,24 @@ const productReducer = (state = initialState, action) => {
                 newPhoto: action.payload
             }
         }
-     
+
+        //sort 
+        //case A_TO_Z: {
+//
+        //}
+        //case Z_TO_A: {
+//
+        //}
+        //case LESS_TO_MORE: {
+//
+        //}
+        //case MORE_TO_LESS: {
+//
+        //}
+
+
         default:
-           return state;
+            return state;
     }
 }
 

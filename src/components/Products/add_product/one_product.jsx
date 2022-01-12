@@ -13,7 +13,7 @@ const OneProduct = (props) => {
     return (
         <div  onClick={() => history.push(`/details/${props.id}`)} className='OneProduct__wrapper'>
                 <div className='OneProduct__image'>
-                    <img src={props.img} alt="img" />
+                    <img src={props.img} alt="Product" />
                 </div>
             <div className='OneProduct__info' >
                 <div>

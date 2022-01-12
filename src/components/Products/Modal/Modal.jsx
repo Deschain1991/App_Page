@@ -18,7 +18,7 @@ const Modal = (props) => {
       <div className = {props.active ? 'modal active' : 'modal'} onClick = {() => props.setActive(false)}>
           <div className = {props.active ? 'modal__content active' : 'modal__content'} onClick ={e => e.stopPropagation()}>
           <div className='modal-style'>
-                    <div> Add new product</div>
+                    <div>Add new product</div>
                     
                     <div>
                         <div>Name</div>

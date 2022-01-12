@@ -15,7 +15,7 @@ const NewProduct = (props) => {
                 <button>Back</button>
             </div>
             <div className='new-product__image'>
-                <img src={props.productsData.photo} alt="New product image" />
+                <img src={props.productsData.photo} alt="New product" />
             </div>
             <div className='new-product__description'></div>
             <div className='new-product__comments'>
