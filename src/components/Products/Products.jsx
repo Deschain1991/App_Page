@@ -12,7 +12,6 @@ import Sort from "./Modal/Sort";
 
 const Products = (props) => {
 
-    const dispatch = useDispatch()
 
     const [modalActive, setModalActive] = useState(false)
     const [modalSortActive, setModalSortActive] = useState(false)

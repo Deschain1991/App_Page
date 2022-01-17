@@ -10,28 +10,41 @@
     "b d c";
     grid-template-rows: 1fr 1fr;
     grid-template-columns: 2fr 10fr 6fr;
-    grid-gap: 15px;
+    grid-gap: 10px;
     background-color: #d8cbb3;
 
     .new-product__back{
         grid-area: b;
+        .button {
+            height: 100%;
+            width: 100%;
+        }
     }
-    .new-product__image{
+    .new-product__view{
         grid-area: i;
         height: 400px;
         width: 670px;
-        border: dotted black;
-        background-color: rgb(168, 191, 211);
+        background-color: rgb(229, 232, 235);
+        .new-product__image {
+           
+        }
+        .new-product__name {
+            width: 40px;
+            height: 40px;
+        }
         
     }
     .new-product__description{
         grid-area: d;
-        border: dotted black;
         background-color: rgb(146, 224, 226);
+        .new-product__description_item {
+            width: 49%;
+            display: inline-block;
+            border: solid red;
+        }
     }
     .new-product__comments{
         grid-area: c;
-        border: dotted black;
         background-color: rgb(236, 182, 234);
         .comments-list{
             background-color: #fff;
