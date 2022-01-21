@@ -1,4 +1,4 @@
-import { COLOR, COUNT, ADD_PRODUCT, DESCRIPTION, HEIGHT, INCREMENT, LENGTH, NAME, PHOTO, WEIGHT, WIDTH, DEL_PRODUCT, } from '../actions/action-types';
+import { COLOR, COUNT, ADD_PRODUCT, DESCRIPTION, HEIGHT, INCREMENT, LENGTH, NAME, PHOTO, WEIGHT, WIDTH, DEL_PRODUCT, ADD_COMMENT, } from '../actions/action-types';
 import { v4 as uuidv4 } from 'uuid';
 
 export const initialState = {
@@ -23,7 +23,7 @@ export const initialState = {
     newWidth: '',
     newCount: '',
     newPhoto: '',
-
+    newComment: ''
 }
 
 
@@ -58,6 +58,7 @@ const productReducer = (state = initialState, action) => {
                 width: state.newWidth,
                 count: state.newCount,
                 photo: state.newPhoto,
+                comment: state.newComment,
 
             }
             return {
@@ -70,6 +71,7 @@ const productReducer = (state = initialState, action) => {
                 newWidth: '',
                 newCount: '',
                 newPhoto: '',
+                newComment: '',
                 items: [
                     ...state.items, newProduct
                 ]
@@ -137,6 +139,13 @@ const productReducer = (state = initialState, action) => {
             return {
                 ...state,
                 newPhoto: action.payload
+            }
+        }
+        case ADD_COMMENT: {
+            return {
+
+                ...state,
+                newComment:action.payload
             }
         }
 

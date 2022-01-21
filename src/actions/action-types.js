@@ -12,6 +12,7 @@ export const COUNT = "COUNT"
 export const PHOTO = "PHOTO"
 export const ADD_PRODUCT = 'ADD_PRODUCT'
 export const DEL_PRODUCT = 'DEL_PRODUCT'
+export const ADD_COMMENT = 'ADD-COMMENT'
 //sort
 export const A_TO_Z = 'A-TO-Z'
 export const Z_TO_A = 'Z-TO-A'

@@ -2,11 +2,18 @@ import React from "react";
 import { useParams } from 'react-router-dom'
 import "./NewProduct.scss";
 import { connect } from "react-redux";
+import { addCommentAction } from "../../actions/all-products.actions";
+import { useState } from "react";
+import { useSelector } from "react-redux";
 
 
 const NewProduct = (props) => {
 
-    const router = useParams()
+    const initialComment = useSelector(state => state.products.items.newComment)
+    const [text, setText] = useState(initialComment);//for comments add(local state)
+
+
+    
 
     return (
 
@@ -34,12 +41,23 @@ const NewProduct = (props) => {
             </div>
 
             <div className='new-product__comments'>
-                <div>Comments to product {props.productsData.name}</div>
-                <div>Write your comment:</div>
-                <div>
-                    <textarea placeholder='Your comment'></textarea>
+                <div>Comments to :'{props.productsData.name}'
+                    <div>{props.newComment}</div>
                 </div>
-                <button>Send</button>
+                <div>Write your comment:</div>
+
+                <div>{/*for comments add */}
+                    <input
+                        value={text}
+                        onChange={(event) => {
+                            setText(event.currentTarget.value)
+                        }}
+                    >
+                    </input>
+                    <button onClick={() => props.addCommentAction(text)}> Add New Comment </button>
+                </div>
+
+
                 <div className='comments-list'></div>
             </div>
         </div>
@@ -48,13 +66,21 @@ const NewProduct = (props) => {
 }
 
 
+
+
 const mapStateToProps = (state, ownProps) => {
-    const uidOfPraduct = ownProps.match.params.id
+    const newComment = state.products.newComment
+    const uidOfProduct = ownProps.match.params.id
     const allProducts = state.products.items
-    const data = (allProducts.find(item => item.id === uidOfPraduct) || {})
+    const data = (allProducts.find(item => item.id === uidOfProduct) || {})
     return {
-        productsData: data
+        productsData: data,
+        newComment: newComment
     }
 }
 
-export default connect(mapStateToProps, null)(NewProduct);
+const mapDispatchToProps = {
+    addCommentAction: addCommentAction
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(NewProduct);

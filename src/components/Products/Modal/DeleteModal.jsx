@@ -12,7 +12,6 @@ const DeleteModal = (props) => {
     const submitActions = () => {
         props.setActive(false)
     }
-console.log('00000000000000000000',props.id)
     return (
         <div className={props.active ? 'modal active' : 'modal'} onClick={() => props.setActive(false)}>
             <div className={props.active ? 'modal__content active' : 'modal__content'} onClick={e => e.stopPropagation()}>

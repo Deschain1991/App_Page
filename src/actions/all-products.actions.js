@@ -11,6 +11,7 @@ import {
     ADD_PRODUCT,
     PHOTO,
     DEL_PRODUCT,
+    ADD_COMMENT,
 } from './action-types'
 
 export const increment = () => {
@@ -38,3 +39,5 @@ export const updateHeight = (text) => ({ type: HEIGHT, payload: text });
 export const updateWidth = (text) => ({ type: WIDTH, payload: text });
 export const updateCount = (text) => ({ type: COUNT, payload: text });
 export const updatePhoto = (text) => ({ type: PHOTO, payload: text });
+
+export const addCommentAction = (text) => ({type: ADD_COMMENT,payload:text});
